@@ -1,4 +1,4 @@
-import { Link, Outlet, useRouterState } from "@tanstack/react-router";
+import { Outlet, useRouterState } from "@tanstack/react-router";
 import { Logo } from "@/components/common/Logo";
 import { RoleSwitcher } from "@/components/common/RoleSwitcher";
 import { ChatbotWidget } from "@/components/common/ChatbotWidget";
@@ -29,23 +29,23 @@ export function PublicLayout() {
           <Logo />
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV.map((n) => (
-              <Link
+              <a
                 key={n.to}
-                to={n.to}
+                href={n.to}
                 className={cn(
                   "rounded-md px-3 py-1.5 text-sm font-medium transition-colors hover:bg-muted",
                   path === n.to && "bg-primary/10 text-primary"
                 )}
               >
                 {n.label}
-              </Link>
+              </a>
             ))}
           </nav>
           <div className="flex items-center gap-2">
             <div className="hidden sm:block"><RoleSwitcher /></div>
-            <Link to="/portal" className="hidden sm:block">
+            <a href="/portal" className="hidden sm:block">
               <Button size="sm">Member Login</Button>
-            </Link>
+            </a>
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="lg:hidden">
@@ -56,9 +56,9 @@ export function PublicLayout() {
                 <div className="border-b p-4"><Logo /></div>
                 <nav className="flex flex-col p-2">
                   {NAV.map((n) => (
-                    <Link
+                    <a
                       key={n.to}
-                      to={n.to}
+                      href={n.to}
                       onClick={() => setOpen(false)}
                       className={cn(
                         "rounded-md px-3 py-2 text-sm font-medium hover:bg-muted",
@@ -66,12 +66,12 @@ export function PublicLayout() {
                       )}
                     >
                       {n.label}
-                    </Link>
+                    </a>
                   ))}
                   <div className="mt-3 border-t p-2"><RoleSwitcher /></div>
-                  <Link to="/portal" onClick={() => setOpen(false)} className="mt-2">
+                  <a href="/portal" onClick={() => setOpen(false)} className="mt-2 block">
                     <Button className="w-full" size="sm">Member Login</Button>
-                  </Link>
+                  </a>
                 </nav>
               </SheetContent>
             </Sheet>
@@ -95,13 +95,13 @@ export function PublicLayout() {
           <div>
             <h4 className="mb-3 text-sm font-semibold">Explore</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              {NAV.slice(0, 4).map((n) => <li key={n.to}><Link to={n.to} className="hover:text-primary">{n.label}</Link></li>)}
+              {NAV.slice(0, 4).map((n) => <li key={n.to}><a href={n.to} className="hover:text-primary">{n.label}</a></li>)}
             </ul>
           </div>
           <div>
             <h4 className="mb-3 text-sm font-semibold">More</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              {NAV.slice(4).map((n) => <li key={n.to}><Link to={n.to} className="hover:text-primary">{n.label}</Link></li>)}
+              {NAV.slice(4).map((n) => <li key={n.to}><a href={n.to} className="hover:text-primary">{n.label}</a></li>)}
             </ul>
           </div>
           <div>
