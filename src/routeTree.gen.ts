@@ -9,50 +9,506 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as PortalRouteImport } from './routes/portal'
+import { Route as PublicRouteImport } from './routes/_public'
+import { Route as PortalIndexRouteImport } from './routes/portal.index'
+import { Route as PublicIndexRouteImport } from './routes/_public.index'
+import { Route as PortalSubmitPaymentRouteImport } from './routes/portal.submit-payment'
+import { Route as PortalProfileRouteImport } from './routes/portal.profile'
+import { Route as PortalOccasionsRouteImport } from './routes/portal.occasions'
+import { Route as PortalLatenessRouteImport } from './routes/portal.lateness'
+import { Route as PortalFinesRouteImport } from './routes/portal.fines'
+import { Route as PortalDuesRouteImport } from './routes/portal.dues'
+import { Route as PortalDocumentsRouteImport } from './routes/portal.documents'
+import { Route as PortalDirectoryRouteImport } from './routes/portal.directory'
+import { Route as PortalContributionsRouteImport } from './routes/portal.contributions'
+import { Route as PublicNewsRouteImport } from './routes/_public.news'
+import { Route as PublicMembershipRouteImport } from './routes/_public.membership'
+import { Route as PublicGalleryRouteImport } from './routes/_public.gallery'
+import { Route as PublicEventsRouteImport } from './routes/_public.events'
+import { Route as PublicContactRouteImport } from './routes/_public.contact'
+import { Route as PublicCharityRouteImport } from './routes/_public.charity'
+import { Route as PublicAboutRouteImport } from './routes/_public.about'
+import { Route as PortalChatPrivateRouteImport } from './routes/portal.chat.private'
+import { Route as PortalChatGroupRouteImport } from './routes/portal.chat.group'
 
-const IndexRoute = IndexRouteImport.update({
+const PortalRoute = PortalRouteImport.update({
+  id: '/portal',
+  path: '/portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicRoute = PublicRouteImport.update({
+  id: '/_public',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortalIndexRoute = PortalIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => PortalRoute,
+} as any)
+const PublicIndexRoute = PublicIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PublicRoute,
+} as any)
+const PortalSubmitPaymentRoute = PortalSubmitPaymentRouteImport.update({
+  id: '/submit-payment',
+  path: '/submit-payment',
+  getParentRoute: () => PortalRoute,
+} as any)
+const PortalProfileRoute = PortalProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => PortalRoute,
+} as any)
+const PortalOccasionsRoute = PortalOccasionsRouteImport.update({
+  id: '/occasions',
+  path: '/occasions',
+  getParentRoute: () => PortalRoute,
+} as any)
+const PortalLatenessRoute = PortalLatenessRouteImport.update({
+  id: '/lateness',
+  path: '/lateness',
+  getParentRoute: () => PortalRoute,
+} as any)
+const PortalFinesRoute = PortalFinesRouteImport.update({
+  id: '/fines',
+  path: '/fines',
+  getParentRoute: () => PortalRoute,
+} as any)
+const PortalDuesRoute = PortalDuesRouteImport.update({
+  id: '/dues',
+  path: '/dues',
+  getParentRoute: () => PortalRoute,
+} as any)
+const PortalDocumentsRoute = PortalDocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => PortalRoute,
+} as any)
+const PortalDirectoryRoute = PortalDirectoryRouteImport.update({
+  id: '/directory',
+  path: '/directory',
+  getParentRoute: () => PortalRoute,
+} as any)
+const PortalContributionsRoute = PortalContributionsRouteImport.update({
+  id: '/contributions',
+  path: '/contributions',
+  getParentRoute: () => PortalRoute,
+} as any)
+const PublicNewsRoute = PublicNewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => PublicRoute,
+} as any)
+const PublicMembershipRoute = PublicMembershipRouteImport.update({
+  id: '/membership',
+  path: '/membership',
+  getParentRoute: () => PublicRoute,
+} as any)
+const PublicGalleryRoute = PublicGalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => PublicRoute,
+} as any)
+const PublicEventsRoute = PublicEventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => PublicRoute,
+} as any)
+const PublicContactRoute = PublicContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => PublicRoute,
+} as any)
+const PublicCharityRoute = PublicCharityRouteImport.update({
+  id: '/charity',
+  path: '/charity',
+  getParentRoute: () => PublicRoute,
+} as any)
+const PublicAboutRoute = PublicAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => PublicRoute,
+} as any)
+const PortalChatPrivateRoute = PortalChatPrivateRouteImport.update({
+  id: '/chat/private',
+  path: '/chat/private',
+  getParentRoute: () => PortalRoute,
+} as any)
+const PortalChatGroupRoute = PortalChatGroupRouteImport.update({
+  id: '/chat/group',
+  path: '/chat/group',
+  getParentRoute: () => PortalRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof PublicIndexRoute
+  '/portal': typeof PortalRouteWithChildren
+  '/about': typeof PublicAboutRoute
+  '/charity': typeof PublicCharityRoute
+  '/contact': typeof PublicContactRoute
+  '/events': typeof PublicEventsRoute
+  '/gallery': typeof PublicGalleryRoute
+  '/membership': typeof PublicMembershipRoute
+  '/news': typeof PublicNewsRoute
+  '/portal/contributions': typeof PortalContributionsRoute
+  '/portal/directory': typeof PortalDirectoryRoute
+  '/portal/documents': typeof PortalDocumentsRoute
+  '/portal/dues': typeof PortalDuesRoute
+  '/portal/fines': typeof PortalFinesRoute
+  '/portal/lateness': typeof PortalLatenessRoute
+  '/portal/occasions': typeof PortalOccasionsRoute
+  '/portal/profile': typeof PortalProfileRoute
+  '/portal/submit-payment': typeof PortalSubmitPaymentRoute
+  '/portal/': typeof PortalIndexRoute
+  '/portal/chat/group': typeof PortalChatGroupRoute
+  '/portal/chat/private': typeof PortalChatPrivateRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/about': typeof PublicAboutRoute
+  '/charity': typeof PublicCharityRoute
+  '/contact': typeof PublicContactRoute
+  '/events': typeof PublicEventsRoute
+  '/gallery': typeof PublicGalleryRoute
+  '/membership': typeof PublicMembershipRoute
+  '/news': typeof PublicNewsRoute
+  '/portal/contributions': typeof PortalContributionsRoute
+  '/portal/directory': typeof PortalDirectoryRoute
+  '/portal/documents': typeof PortalDocumentsRoute
+  '/portal/dues': typeof PortalDuesRoute
+  '/portal/fines': typeof PortalFinesRoute
+  '/portal/lateness': typeof PortalLatenessRoute
+  '/portal/occasions': typeof PortalOccasionsRoute
+  '/portal/profile': typeof PortalProfileRoute
+  '/portal/submit-payment': typeof PortalSubmitPaymentRoute
+  '/': typeof PublicIndexRoute
+  '/portal': typeof PortalIndexRoute
+  '/portal/chat/group': typeof PortalChatGroupRoute
+  '/portal/chat/private': typeof PortalChatPrivateRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/_public': typeof PublicRouteWithChildren
+  '/portal': typeof PortalRouteWithChildren
+  '/_public/about': typeof PublicAboutRoute
+  '/_public/charity': typeof PublicCharityRoute
+  '/_public/contact': typeof PublicContactRoute
+  '/_public/events': typeof PublicEventsRoute
+  '/_public/gallery': typeof PublicGalleryRoute
+  '/_public/membership': typeof PublicMembershipRoute
+  '/_public/news': typeof PublicNewsRoute
+  '/portal/contributions': typeof PortalContributionsRoute
+  '/portal/directory': typeof PortalDirectoryRoute
+  '/portal/documents': typeof PortalDocumentsRoute
+  '/portal/dues': typeof PortalDuesRoute
+  '/portal/fines': typeof PortalFinesRoute
+  '/portal/lateness': typeof PortalLatenessRoute
+  '/portal/occasions': typeof PortalOccasionsRoute
+  '/portal/profile': typeof PortalProfileRoute
+  '/portal/submit-payment': typeof PortalSubmitPaymentRoute
+  '/_public/': typeof PublicIndexRoute
+  '/portal/': typeof PortalIndexRoute
+  '/portal/chat/group': typeof PortalChatGroupRoute
+  '/portal/chat/private': typeof PortalChatPrivateRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/portal'
+    | '/about'
+    | '/charity'
+    | '/contact'
+    | '/events'
+    | '/gallery'
+    | '/membership'
+    | '/news'
+    | '/portal/contributions'
+    | '/portal/directory'
+    | '/portal/documents'
+    | '/portal/dues'
+    | '/portal/fines'
+    | '/portal/lateness'
+    | '/portal/occasions'
+    | '/portal/profile'
+    | '/portal/submit-payment'
+    | '/portal/'
+    | '/portal/chat/group'
+    | '/portal/chat/private'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/about'
+    | '/charity'
+    | '/contact'
+    | '/events'
+    | '/gallery'
+    | '/membership'
+    | '/news'
+    | '/portal/contributions'
+    | '/portal/directory'
+    | '/portal/documents'
+    | '/portal/dues'
+    | '/portal/fines'
+    | '/portal/lateness'
+    | '/portal/occasions'
+    | '/portal/profile'
+    | '/portal/submit-payment'
+    | '/'
+    | '/portal'
+    | '/portal/chat/group'
+    | '/portal/chat/private'
+  id:
+    | '__root__'
+    | '/_public'
+    | '/portal'
+    | '/_public/about'
+    | '/_public/charity'
+    | '/_public/contact'
+    | '/_public/events'
+    | '/_public/gallery'
+    | '/_public/membership'
+    | '/_public/news'
+    | '/portal/contributions'
+    | '/portal/directory'
+    | '/portal/documents'
+    | '/portal/dues'
+    | '/portal/fines'
+    | '/portal/lateness'
+    | '/portal/occasions'
+    | '/portal/profile'
+    | '/portal/submit-payment'
+    | '/_public/'
+    | '/portal/'
+    | '/portal/chat/group'
+    | '/portal/chat/private'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  PublicRoute: typeof PublicRouteWithChildren
+  PortalRoute: typeof PortalRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/portal': {
+      id: '/portal'
+      path: '/portal'
+      fullPath: '/portal'
+      preLoaderRoute: typeof PortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_public': {
+      id: '/_public'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof PublicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portal/': {
+      id: '/portal/'
+      path: '/'
+      fullPath: '/portal/'
+      preLoaderRoute: typeof PortalIndexRouteImport
+      parentRoute: typeof PortalRoute
+    }
+    '/_public/': {
+      id: '/_public/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof PublicIndexRouteImport
+      parentRoute: typeof PublicRoute
+    }
+    '/portal/submit-payment': {
+      id: '/portal/submit-payment'
+      path: '/submit-payment'
+      fullPath: '/portal/submit-payment'
+      preLoaderRoute: typeof PortalSubmitPaymentRouteImport
+      parentRoute: typeof PortalRoute
+    }
+    '/portal/profile': {
+      id: '/portal/profile'
+      path: '/profile'
+      fullPath: '/portal/profile'
+      preLoaderRoute: typeof PortalProfileRouteImport
+      parentRoute: typeof PortalRoute
+    }
+    '/portal/occasions': {
+      id: '/portal/occasions'
+      path: '/occasions'
+      fullPath: '/portal/occasions'
+      preLoaderRoute: typeof PortalOccasionsRouteImport
+      parentRoute: typeof PortalRoute
+    }
+    '/portal/lateness': {
+      id: '/portal/lateness'
+      path: '/lateness'
+      fullPath: '/portal/lateness'
+      preLoaderRoute: typeof PortalLatenessRouteImport
+      parentRoute: typeof PortalRoute
+    }
+    '/portal/fines': {
+      id: '/portal/fines'
+      path: '/fines'
+      fullPath: '/portal/fines'
+      preLoaderRoute: typeof PortalFinesRouteImport
+      parentRoute: typeof PortalRoute
+    }
+    '/portal/dues': {
+      id: '/portal/dues'
+      path: '/dues'
+      fullPath: '/portal/dues'
+      preLoaderRoute: typeof PortalDuesRouteImport
+      parentRoute: typeof PortalRoute
+    }
+    '/portal/documents': {
+      id: '/portal/documents'
+      path: '/documents'
+      fullPath: '/portal/documents'
+      preLoaderRoute: typeof PortalDocumentsRouteImport
+      parentRoute: typeof PortalRoute
+    }
+    '/portal/directory': {
+      id: '/portal/directory'
+      path: '/directory'
+      fullPath: '/portal/directory'
+      preLoaderRoute: typeof PortalDirectoryRouteImport
+      parentRoute: typeof PortalRoute
+    }
+    '/portal/contributions': {
+      id: '/portal/contributions'
+      path: '/contributions'
+      fullPath: '/portal/contributions'
+      preLoaderRoute: typeof PortalContributionsRouteImport
+      parentRoute: typeof PortalRoute
+    }
+    '/_public/news': {
+      id: '/_public/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof PublicNewsRouteImport
+      parentRoute: typeof PublicRoute
+    }
+    '/_public/membership': {
+      id: '/_public/membership'
+      path: '/membership'
+      fullPath: '/membership'
+      preLoaderRoute: typeof PublicMembershipRouteImport
+      parentRoute: typeof PublicRoute
+    }
+    '/_public/gallery': {
+      id: '/_public/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof PublicGalleryRouteImport
+      parentRoute: typeof PublicRoute
+    }
+    '/_public/events': {
+      id: '/_public/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof PublicEventsRouteImport
+      parentRoute: typeof PublicRoute
+    }
+    '/_public/contact': {
+      id: '/_public/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof PublicContactRouteImport
+      parentRoute: typeof PublicRoute
+    }
+    '/_public/charity': {
+      id: '/_public/charity'
+      path: '/charity'
+      fullPath: '/charity'
+      preLoaderRoute: typeof PublicCharityRouteImport
+      parentRoute: typeof PublicRoute
+    }
+    '/_public/about': {
+      id: '/_public/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof PublicAboutRouteImport
+      parentRoute: typeof PublicRoute
+    }
+    '/portal/chat/private': {
+      id: '/portal/chat/private'
+      path: '/chat/private'
+      fullPath: '/portal/chat/private'
+      preLoaderRoute: typeof PortalChatPrivateRouteImport
+      parentRoute: typeof PortalRoute
+    }
+    '/portal/chat/group': {
+      id: '/portal/chat/group'
+      path: '/chat/group'
+      fullPath: '/portal/chat/group'
+      preLoaderRoute: typeof PortalChatGroupRouteImport
+      parentRoute: typeof PortalRoute
     }
   }
 }
 
+interface PublicRouteChildren {
+  PublicAboutRoute: typeof PublicAboutRoute
+  PublicCharityRoute: typeof PublicCharityRoute
+  PublicContactRoute: typeof PublicContactRoute
+  PublicEventsRoute: typeof PublicEventsRoute
+  PublicGalleryRoute: typeof PublicGalleryRoute
+  PublicMembershipRoute: typeof PublicMembershipRoute
+  PublicNewsRoute: typeof PublicNewsRoute
+  PublicIndexRoute: typeof PublicIndexRoute
+}
+
+const PublicRouteChildren: PublicRouteChildren = {
+  PublicAboutRoute: PublicAboutRoute,
+  PublicCharityRoute: PublicCharityRoute,
+  PublicContactRoute: PublicContactRoute,
+  PublicEventsRoute: PublicEventsRoute,
+  PublicGalleryRoute: PublicGalleryRoute,
+  PublicMembershipRoute: PublicMembershipRoute,
+  PublicNewsRoute: PublicNewsRoute,
+  PublicIndexRoute: PublicIndexRoute,
+}
+
+const PublicRouteWithChildren =
+  PublicRoute._addFileChildren(PublicRouteChildren)
+
+interface PortalRouteChildren {
+  PortalContributionsRoute: typeof PortalContributionsRoute
+  PortalDirectoryRoute: typeof PortalDirectoryRoute
+  PortalDocumentsRoute: typeof PortalDocumentsRoute
+  PortalDuesRoute: typeof PortalDuesRoute
+  PortalFinesRoute: typeof PortalFinesRoute
+  PortalLatenessRoute: typeof PortalLatenessRoute
+  PortalOccasionsRoute: typeof PortalOccasionsRoute
+  PortalProfileRoute: typeof PortalProfileRoute
+  PortalSubmitPaymentRoute: typeof PortalSubmitPaymentRoute
+  PortalIndexRoute: typeof PortalIndexRoute
+  PortalChatGroupRoute: typeof PortalChatGroupRoute
+  PortalChatPrivateRoute: typeof PortalChatPrivateRoute
+}
+
+const PortalRouteChildren: PortalRouteChildren = {
+  PortalContributionsRoute: PortalContributionsRoute,
+  PortalDirectoryRoute: PortalDirectoryRoute,
+  PortalDocumentsRoute: PortalDocumentsRoute,
+  PortalDuesRoute: PortalDuesRoute,
+  PortalFinesRoute: PortalFinesRoute,
+  PortalLatenessRoute: PortalLatenessRoute,
+  PortalOccasionsRoute: PortalOccasionsRoute,
+  PortalProfileRoute: PortalProfileRoute,
+  PortalSubmitPaymentRoute: PortalSubmitPaymentRoute,
+  PortalIndexRoute: PortalIndexRoute,
+  PortalChatGroupRoute: PortalChatGroupRoute,
+  PortalChatPrivateRoute: PortalChatPrivateRoute,
+}
+
+const PortalRouteWithChildren =
+  PortalRoute._addFileChildren(PortalRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  PublicRoute: PublicRouteWithChildren,
+  PortalRoute: PortalRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
