@@ -85,7 +85,8 @@ export function PublicLayout() {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Logo />
-            <p className="mt-3 text-sm text-muted-foreground">Brotherhood. Charity. Excellence. Serving our community since 2014.</p>
+            <p className="mt-1 text-xs font-medium text-muted-foreground">RC 2000139</p>
+            <p className="mt-3 text-sm text-muted-foreground">Family Ballers...Progress. Serving our community since 2014.</p>
             <div className="mt-3 flex gap-2">
               <a href="#" className="rounded-md border p-2 hover:bg-muted"><Facebook className="h-4 w-4" /></a>
               <a href="#" className="rounded-md border p-2 hover:bg-muted"><Instagram className="h-4 w-4" /></a>
@@ -109,12 +110,12 @@ export function PublicLayout() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0" /> 12 Allen Avenue, Ikeja, Lagos</li>
               <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 shrink-0" /> +234 803 555 0000</li>
-              <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0" /> hello@familyballers.ng</li>
+              <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0" /> familyballer@gmail.com</li>
             </ul>
           </div>
         </div>
         <div className="border-t py-4 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Family Ballers Club. All rights reserved.
+          © {new Date().getFullYear()} Family Baller's Club Nigeria (RC 2000139). All rights reserved.
         </div>
       </footer>
 
