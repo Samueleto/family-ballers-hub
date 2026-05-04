@@ -1,10 +1,13 @@
 export type PaymentStatus = "approved" | "pending" | "rejected" | "partial" | "unpaid" | "overdue";
 
 export const CLUB = {
-  name: "Family Ballers",
-  tagline: "Brotherhood. Charity. Excellence.",
+  name: "Family Baller's Club Nigeria",
+  shortName: "Family Ballers",
+  tagline: "Family Ballers...Progress",
   founded: 2014,
   motto: "Together we rise",
+  email: "familyballer@gmail.com",
+  rcNumber: "RC 2000139",
 };
 
 export const ME = {

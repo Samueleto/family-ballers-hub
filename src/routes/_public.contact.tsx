@@ -16,7 +16,7 @@ export const Route = createFileRoute("/_public/contact")({
         <Card><CardContent className="p-6 space-y-4">
           <div className="flex gap-3"><MapPin className="h-5 w-5 text-primary" /><div><p className="font-medium">Address</p><p className="text-sm text-muted-foreground">12 Allen Avenue, Ikeja, Lagos</p></div></div>
           <div className="flex gap-3"><Phone className="h-5 w-5 text-primary" /><div><p className="font-medium">Phone</p><p className="text-sm text-muted-foreground">+234 803 555 0000</p></div></div>
-          <div className="flex gap-3"><Mail className="h-5 w-5 text-primary" /><div><p className="font-medium">Email</p><p className="text-sm text-muted-foreground">hello@familyballers.ng</p></div></div>
+          <div className="flex gap-3"><Mail className="h-5 w-5 text-primary" /><div><p className="font-medium">Email</p><p className="text-sm text-muted-foreground">familyballer@gmail.com</p></div></div>
           <div className="aspect-video overflow-hidden rounded-lg bg-muted flex items-center justify-center text-muted-foreground text-sm">[Map placeholder]</div>
         </CardContent></Card>
         <Card><CardContent className="p-6">

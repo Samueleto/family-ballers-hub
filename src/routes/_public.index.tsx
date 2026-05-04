@@ -8,8 +8,8 @@ import { formatDate, formatNaira } from "@/lib/format";
 export const Route = createFileRoute("/_public/")({
   head: () => ({
     meta: [
-      { title: "Family Ballers — Brotherhood. Charity. Excellence." },
-      { name: "description", content: "Welcome to Family Ballers Club. Serving our community since 2014 through brotherhood and charity." },
+      { title: "Family Baller's Club Nigeria — Family Ballers...Progress" },
+      { name: "description", content: "Welcome to Family Baller's Club Nigeria. Serving our community since 2014." },
     ],
   }),
   component: HomePage,
